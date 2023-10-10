@@ -1,0 +1,21 @@
+<h2>1. Interpolação</h2>
+<p>{{texto}}</p>
+
+<h2>2. Interpolação href</h2>
+<p><a href="{{link}}">Clique aqui</a></p>
+
+<h2>3. Event biding</h2>
+<p [style.color]="cor" [style.backgroundColor]="corFundo" (click)="mudaCor()">Clique neste parágrafo para mudar as cores.</p>
+
+<article>
+    <h2>4. Two way binding</h2>
+    <select #select (change)="setFontFamily(select.value)">
+        <option value="arial">Arial</option>
+        <option value="times new roman">Times New Roman</option>
+        <option value="comic sans ms">Comic Sans MS</option>
+    </select>      
+      <p [style.fontFamily]="fontFamily">Esse texto vai mudar de fonte</p>
+        <p *ngIf="fontFamily === 'arial'">O texto a cima vai estar na fonte Arial.</p>
+        <p *ngIf="fontFamily === 'times new roman'">O texto agora está em times new roman.</p>
+        <p *ngIf="fontFamily === 'comic sans ms'">E agora está em comic sans ms.</p>
+</article>
